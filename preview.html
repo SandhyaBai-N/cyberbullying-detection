@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview </title>
+    <style>
+        h1{
+            margin-bottom:50px;
+            color:black; 
+            align-items: center;
+            font-family: "Girassol",sans-serif;
+        }
+        label{
+            font-size: 20px;
+            margin-bottom: 10px;
+            color:black;
+            font-family: "Girassol",sans-serif;
+        }
+        button{
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            color: white;
+            background-color: darkblue;
+            cursor:pointer;
+            font-family: "Girassol",sans-serif;
+        }
+        button:hover{
+            background-color: rgb(16, 27, 226);
+            color: white;
+            font-family: "Girassol",sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+        <h1> Preview Dataset</h1>
+        <div>  {{data.to_html(classes="table striped",na_rep="-") | safe}} </div>     
+        <button type="submit" onclick="predict()"> click to train</button>
+        <br/><br/>
+    </center>
+    <script>
+        function predict(){
+            alert("Training finished");
+            window.open("/prediction","_self");
+        }
+       
+    </script>
+</body>
+</html>

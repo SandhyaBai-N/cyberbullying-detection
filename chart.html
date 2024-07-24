@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['tweet', 'percent'],
+          ['Offensive',     60],
+         
+          ['Non offensive',    40],
+		
+        ]);
+
+        var options = {
+          title: '',
+          is3D: true,
+          colors:['red','blue']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+	    
+    </script>
+    <style>
+     
+       *{
+        top:0;
+      }
+      .header{
+            display: flex;
+            background-color: black;
+            width: 100%;
+            height: 50px;
+            align-items: center; 
+      }
+      .menu-container{
+            position: absolute;
+            top:0;
+            right: 5px;
+            margin-top: 15px;
+            margin-right: 20px;
+            padding-left: 10px;
+            font-family: "Girassol",sans-serif;
+      }
+      .menu{
+           
+           text-decoration: none;
+           color: white;
+           padding: 25px;
+           border-radius: 10px;
+           margin-right: 20px;
+           font-size: 20px;
+           font-family: "Girassol",sans-serif;
+       }
+      .menu:hover{
+           color: rgb(21, 21, 232);
+       }
+    </style>
+   
+</head>
+    
+    <body>
+      <div class="header">
+        <div class="menu-container">
+            <a class="menu" href="/performance"> <b>PERFORMANCE </b></a>
+            <a class="menu" href="/chart"><b>CHART</b></a>
+            <a class="menu" href="/"><b>LOGOUT</b></a>
+            
+        </div>
+
+    </div>
+     <center><h1>HATE SPEECH ON TWITTER</h1></center>
+   
+     <center>  <div id="piechart_3d" style="width: 900px; height: 500px; "></div></center>
+    </body>
+
+</html>
+      
+          
+    
+   
+
+
+   
+
+

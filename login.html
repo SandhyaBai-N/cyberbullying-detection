@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>LOGIN</title>
+    <style>
+        
+        body{
+            
+            background-image: url("../static/bg3.jpg");
+            font-family: "Girassol",sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+        }
+        .menu-container{
+            position: absolute;
+            top:0;
+            right: 0;
+            margin-top: 20px;
+            font-family: "Girassol",sans-serif;
+        }
+        .menu{
+           
+            text-decoration: none;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-right: 50px;
+            font-size: 25px;
+            font-family: "Girassol",sans-serif;
+        }
+        .menu:hover{
+            color: rgb(49, 11, 218);
+        }
+        *{
+            
+            box-sizing: border-box;
+            font-family:"Girassol",sans-serif;
+        }  
+        .login-container{
+            width:420px;
+            background: transparent;
+            color:white;
+            border: 2px solid rgba(219, 222, 223, 0.886);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding:30px 40px;
+            margin-top: 50px;
+            margin-right: 50%;
+        }
+        .login-container h1{
+            font-size: 36px;
+            text-align: center;
+        }
+        .login-container .input-box{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin:30px 0;
+        }
+        .input-box input{
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            color:white;
+            font-size: 16px;
+            outline: none;
+            border:2px solid white;
+            border-radius:40px;
+            padding:20px 45px 20px 20px;
+        }
+        .input-box input::placeholder{
+            color: white;
+        }
+        .input-box i{
+            position: absolute;
+            right:20px;
+            top:30%;
+            font-size: 20px;
+        }
+        .login-container .btn{
+            width:100%;
+            height: 45px;
+            background: rgb(30, 20, 227);
+            border :none;
+            outline: none;
+            border-radius:40px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            cursor: pointer;
+            font-size: 20px;
+            color:white;
+            font-weight: 600;
+            margin:20px 0 15px;
+        }
+
+
+
+
+
+        
+            
+      
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu-container">
+            <a class="menu" href="/"><b>HOME</b></a>
+            
+            
+            
+        </div>
+
+    </div>
+     
+    <center>
+        <div class="login-container">
+           <h1><b>LOGIN FORM</b></h1>
+           <div class="input-box">
+               <input type="text"  id="username" name="username" placeholder="Username" required>
+               <i class='bx bxs-user'></i>
+           </div>
+           <div class="input-box">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <i class='bx bxs-lock'></i>
+           </div>
+           <input type="submit" class="btn" value="login" onclick="validate()" />
+        </div>   
+    </center>
+    <script>
+        function validate(){
+            var username=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            
+            if(username=="admin" && password=="admin"){
+                alert("login sucess!");
+                window.open('/upload',"_self");
+            } else{
+                alert("invalid credentials");
+            }            
+        }        
+    </script>
+    
+</body>
+</html>

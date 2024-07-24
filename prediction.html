@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREDICTION</title>
+    <style>
+        .header{
+            display: flex;
+            
+            justify-content: space-between;
+            align-items: center;
+            
+            
+        }
+        body{
+            
+            background-image: url("../static/bg3.jpg");
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Girassol",sans-serif;
+        }
+        .menu-container{
+            position: absolute;
+            top:0;
+            right: 0;
+            margin-top: 50px;
+            font-family: "Girassol",sans-serif;
+        }
+        .menu{
+           
+            text-decoration: none;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-right: 20px;
+            font-size: 20px;
+            font-family: "Girassol",sans-serif;
+        }
+        .menu:hover{
+            color: darkblue;
+        }
+        *{
+            margin: 0px;
+        }  
+        .prediction-container{
+            position: relative;
+            margin-top: 200px;
+            width: 400px;
+            height: 400px;
+            background: transparent;
+            border: 2px solid rgba(16, 17, 18, 0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            display: flex;
+            font-family: "Girassol",sans-serif;
+            justify-content: center;
+            align-items: center;
+        }  
+        h1{
+            margin-bottom: 20px;
+         
+            color:white;
+            
+            font-family: "Girassol",sans-serif;
+        }
+        h2{
+            margin-bottom: 8px;
+            color:white;
+            font-family: "Girassol",sans-serif;
+        }
+        label{
+         
+            color: white;
+            font-size: 20px;
+        }
+        p{
+            color: white;
+            font-size: 20px;
+        }
+       
+        input[type="submit"] {
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            color: darkblue;
+            background-color: white;
+            cursor:pointer;
+            font-family: "Girassol",sans-serif;
+            
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(16, 27, 226);
+            color: azure;
+            font-family: "Girassol",sans-serif;
+        }
+        a{
+            color:#007bff
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        textarea{
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 16px;
+            width:100%;
+            resize: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu-container">
+            <a class="menu" href="/"><b>HOME</b></a>
+            <a class="menu" href="/login"><b> LOGIN </b></a>
+            <a class="menu" href="/upload"><b> UPLOAD</b> </a>
+            <a class="menu" href="/performance"> <b>PERFORMANCE </b></a>
+            
+        </div>
+
+    </div>
+     
+
+    <center>
+        <div class="prediction-container">
+        
+            <form action="/check" methods= "post">
+                 <h1>Cyberbullying Prediction</h1>
+                 <label>Enter the tweet:</label>
+                 <textarea type="text"  name="tweet" id="tweet_text" rows="5"  cols="14" placeholder="Enter the twitter text here!" required></textarea>
+                 <br><br>
+                 <input type="submit" value="Predict"   />   
+            </form>
+                
+               
+        </div>  
+            <h2> Prediction Results: <span> {{prediction_text}} </span></h2>
+    </center>
+    
+   
+</body>
+</html>    
+
